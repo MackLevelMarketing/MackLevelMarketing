@@ -33,38 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* 🔥 NAVBAR */
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 8%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5,5,5,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(214,181,109,0.2);
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      color: var(--champagne);
-      font-size: 16px;
-    }
-
-    .links a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--ivory);
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .links a:hover {
-      color: var(--champagne);
-    }
-
     body::before {
       content: "";
       position: fixed;
@@ -82,6 +50,7 @@
       display: flex;
       align-items: center;
       padding: 40px 8%;
+      position: relative;
     }
 
     .hero {
@@ -105,9 +74,10 @@
     h1 {
       font-size: clamp(42px, 8vw, 88px);
       line-height: 0.95;
+      color: var(--ivory);
     }
 
-    h1 span {
+    h1 span, h2 span {
       color: var(--champagne);
     }
 
@@ -126,20 +96,27 @@
     }
 
     .btn {
+      display: inline-block;
       padding: 14px 26px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), var(--champagne));
       color: #080808;
+      box-shadow: 0 12px 30px rgba(201,162,77,0.25);
     }
 
     .btn-secondary {
       border: 1px solid rgba(214,181,109,0.6);
       color: var(--ivory);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
     }
 
     section {
@@ -153,18 +130,21 @@
 
     .section-title h2 {
       font-size: clamp(34px, 5vw, 58px);
+      margin-bottom: 14px;
     }
 
     .section-title p {
       color: var(--muted);
       line-height: 1.8;
+      font-size: 16px;
     }
 
     .glass {
       background: rgba(255,255,255,0.055);
       border: 1px solid rgba(214,181,109,0.22);
+      backdrop-filter: blur(14px);
       border-radius: 26px;
-      padding: 30px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
     }
 
     .grid {
@@ -173,8 +153,85 @@
       gap: 22px;
     }
 
+    .card {
+      padding: 30px;
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(214,181,109,0.55);
+    }
+
+    .card h3 {
+      color: var(--champagne);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .feature-box {
+      padding: 38px;
+    }
+
+    .feature-box p {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      padding: 24px;
+      border-left: 2px solid var(--champagne);
+    }
+
+    .step strong {
+      color: var(--champagne);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .portfolio {
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      border: 1px dashed rgba(214,181,109,0.45);
+    }
+
     .contact {
       text-align: center;
+      padding: 90px 8%;
+    }
+
+    .contact h2 {
+      font-size: clamp(36px, 6vw, 64px);
+      margin-bottom: 18px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 26px;
+      line-height: 1.8;
     }
 
     footer {
@@ -182,55 +239,188 @@
       padding: 30px;
       color: #9b9183;
       font-size: 13px;
+      border-top: 1px solid rgba(214,181,109,0.16);
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(35px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      animation: fadeUp 1s ease both;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 30px 6%;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔥 NAV -->
-  <div class="nav">
-    <div class="logo">Mack Multi-Level Marketing LLC</div>
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="owners.html">Property Owners</a>
-      <a href="investors.html">Cash Flow</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-
   <header>
     <div class="hero">
-      <div class="eyebrow">Luxury STR Strategy · Property & Capital</div>
-
-      <h1>Luxury STR Operations Built Around <span>Property & Cash Flow</span></h1>
-
+      <div class="eyebrow">Boutique STR Strategy · Owner Partnerships · Luxury Hospitality</div>
+      <h1>Elevating Properties Into <span>Premium Short-Term Rental</span> Opportunities.</h1>
       <p>
-        We create structured opportunities through property leasing and professionally managed short-term rental operations.
+        Mack Multi-Level Marketing LLC helps property owners, landlords, and investors maximize rental potential through short-term rental management, rental arbitrage partnerships, and luxury property optimization.
       </p>
-
-      <!-- 🔥 UPDATED BUTTONS -->
       <div class="buttons">
-        <a href="owners.html" class="btn btn-primary">I Own a Property</a>
-        <a href="investors.html" class="btn btn-secondary">I Want Hands-Off Cash Flow</a>
+        <a href="#contact" class="btn btn-primary">Partner With Us</a>
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
       </div>
     </div>
   </header>
 
-  <!-- KEEP REST OF YOUR SECTIONS SAME -->
+  <section class="reveal">
+    <div class="split">
+      <div class="section-title">
+        <h2>Where property meets <span>possibility.</span></h2>
+        <p>
+          We specialize in identifying rental properties with strong short-term rental potential and creating a strategy that benefits both owners and guests.
+        </p>
+      </div>
+
+      <div class="feature-box glass">
+        <p>
+          Our approach blends hospitality, property presentation, guest experience, and income strategy. Whether through management, arbitrage, or optimization, our goal is to create a polished, professional, and profitable rental experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Our <span>Services</span></h2>
+      <p>Designed for owners who want a more strategic, hands-off way to position their rental properties.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card glass">
+        <h3>STR Management</h3>
+        <p>Guest communication, booking support, turnover coordination, pricing strategy, and ongoing property care.</p>
+      </div>
+
+      <div class="card glass">
+        <h3>Rental Arbitrage</h3>
+        <p>We lease qualified properties and operate them as short-term rentals with a professional hospitality strategy.</p>
+      </div>
+
+      <div class="card glass">
+        <h3>Property Optimization</h3>
+        <p>Design, staging, listing improvement, guest experience upgrades, and revenue-focused positioning.</p>
+      </div>
+
+      <div class="card glass">
+        <h3>Owner Partnerships</h3>
+        <p>Customized partnership structures built around the property, location, owner goals, and income potential.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Why owners <span>work with us</span></h2>
+      <p>We focus on professionalism, presentation, and performance — without overpromising or cutting corners.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card glass">
+        <h3>Hands-Off Support</h3>
+        <p>We help reduce the day-to-day burden of managing guest-ready rental operations.</p>
+      </div>
+
+      <div class="card glass">
+        <h3>Luxury Positioning</h3>
+        <p>We create a polished guest experience that helps the property stand out in competitive markets.</p>
+      </div>
+
+      <div class="card glass">
+        <h3>Strategic Income Focus</h3>
+        <p>Every property is reviewed through the lens of pricing, demand, location, and operational feasibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>How it <span>works</span></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="step glass">
+        <strong>01 · Property Review</strong>
+        We evaluate the property, location, rental rules, layout, and market potential.
+      </div>
+
+      <div class="step glass">
+        <strong>02 · Strategy Buildout</strong>
+        We create a customized short-term rental plan based on the property’s best use.
+      </div>
+
+      <div class="step glass">
+        <strong>03 · Setup & Launch</strong>
+        We prepare the listing, guest flow, operations, and presentation.
+      </div>
+
+      <div class="step glass">
+        <strong>04 · Ongoing Management</strong>
+        We support the guest experience, booking flow, turnovers, and property standards.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Current & Future <span>Listings</span></h2>
+      <p>This section can showcase your STR listings, commercial opportunities, photos, revenue examples, and portfolio highlights later.</p>
+    </div>
+
+    <div class="portfolio glass">
+      <div>
+        <h3 style="color: var(--champagne); font-family: 'Playfair Display', serif;">Portfolio Coming Soon</h3>
+        <p style="color: var(--muted); max-width: 520px;">
+          Featured short-term rental properties and partnership opportunities will be added here.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <section class="contact" id="contact">
     <h2>Let’s discuss your <span style="color: var(--champagne);">property.</span></h2>
+    <p>
+      Interested in short-term rental management, rental arbitrage, or a partnership? Reach out to see if your property is a good fit.
+    </p>
 
     <a href="mailto:your@email.com" class="btn btn-primary">Email Us</a>
 
     <p style="margin-top: 24px;">
-      Email: markitcustomerservice@gmail.com<br>
+      Email: markitcustomerservice@gmail.com@.com<br>
       Phone: (601) 672-3881
     </p>
   </section>
