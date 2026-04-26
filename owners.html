@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Property Leasing | Mack Multi-Level Marketing LLC</title>
+  <title>Property Owners | Mack Multi-Level Marketing LLC</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
@@ -20,6 +20,36 @@
       margin: 0;
     }
 
+    /* NAVBAR */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: #050505;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #d6b56d;
+      font-size: 16px;
+    }
+
+    .links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #f5f0e6;
+      font-size: 14px;
+    }
+
+    .links a:hover {
+      color: #d6b56d;
+    }
+
+    /* HERO */
     .hero {
       background: #050505;
       color: white;
@@ -33,11 +63,12 @@
 
     .hero p {
       margin-top: 20px;
-      max-width: 600px;
+      max-width: 650px;
       line-height: 1.7;
       color: #cfc6b8;
     }
 
+    /* SECTIONS */
     .section {
       padding: 70px 8%;
     }
@@ -52,6 +83,7 @@
       line-height: 1.7;
     }
 
+    /* CARDS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -71,6 +103,7 @@
       margin-bottom: 10px;
     }
 
+    /* HIGHLIGHT */
     .highlight {
       background: white;
       border-left: 5px solid #c9a24d;
@@ -78,23 +111,12 @@
       margin-top: 30px;
     }
 
-    .steps {
-      margin-top: 20px;
-    }
-
-    .steps p {
-      margin: 8px 0;
-    }
-
+    /* CTA */
     .cta {
       background: #111;
       color: white;
       text-align: center;
       padding: 70px 8%;
-    }
-
-    .cta h2 {
-      margin-bottom: 15px;
     }
 
     .btn {
@@ -119,79 +141,74 @@
 
 <body>
 
+  <!-- NAV -->
+  <div class="nav">
+    <div class="logo">Mack Multi-Level Marketing LLC</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="owners.html">Property Owners</a>
+      <a href="investors.html">Cash Flow</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
   <div class="hero">
-    <h1>Corporate Leasing Model for Property Owners</h1>
+    <h1>Reliable Rent. Longer Lease Terms. Zero Guest Management.</h1>
     <p>
-      Mack Multi-Level Marketing LLC leases residential properties under structured long-term agreements, providing consistent rental income while managing all short-term rental operations.
+      We lease properties directly from owners and provide consistent rental income while managing all short-term rental operations, including cleaning, upkeep, and guest activity.
     </p>
   </div>
 
+  <!-- BENEFITS -->
   <div class="section">
-    <h2>What We Offer</h2>
-    <p>
-      We operate under a lease-based model. You remain the property owner while our company becomes the tenant and operator, handling all aspects of property use.
-    </p>
+    <h2>Owner Benefits</h2>
 
     <div class="grid">
       <div class="card">
         <h3>Consistent Rent Payments</h3>
-        <p>Monthly rent paid according to lease terms with a focus on reliability and on-time payment.</p>
+        <p>Monthly rent paid on time according to lease terms.</p>
       </div>
 
       <div class="card">
-        <h3>Long-Term Lease Agreements</h3>
-        <p>Structured lease terms that provide stability and reduce vacancy concerns.</p>
+        <h3>Long-Term Lease Stability</h3>
+        <p>Reduced vacancy through structured lease agreements.</p>
       </div>
 
       <div class="card">
-        <h3>Professional Cleaning & Upkeep</h3>
-        <p>Regular cleaning between guest stays and ongoing attention to property condition.</p>
+        <h3>Professional Cleaning</h3>
+        <p>Regular turnover cleanings maintain property condition.</p>
       </div>
 
       <div class="card">
-        <h3>Noise Monitoring Systems</h3>
-        <p>Optional monitoring systems used to discourage parties and protect the property environment.</p>
+        <h3>Property Upkeep</h3>
+        <p>Ongoing attention to cleanliness and presentation.</p>
+      </div>
+
+      <div class="card">
+        <h3>Noise Monitoring</h3>
+        <p>Systems used to discourage parties and protect the property.</p>
       </div>
     </div>
 
     <div class="highlight">
-      <strong>Owner Position:</strong> You collect rent.  
-      <br><strong>Our Role:</strong> We manage operations.
+      <strong>Your role:</strong> Collect rent.<br>
+      <strong>Our role:</strong> Operate the property.
     </div>
   </div>
 
+  <!-- HOW IT WORKS -->
   <div class="section">
-    <h2>How the Lease Structure Works</h2>
+    <h2>How It Works</h2>
 
-    <div class="steps">
-      <p>1. Property review and qualification</p>
-      <p>2. Lease terms discussion (rent, duration, expectations)</p>
-      <p>3. Lease agreement execution</p>
-      <p>4. Property setup and furnishing (if needed)</p>
-      <p>5. Full operational management by our company</p>
-    </div>
+    <p>1. Property review and approval</p>
+    <p>2. Lease agreement discussion</p>
+    <p>3. Lease signing</p>
+    <p>4. Property setup and furnishing</p>
+    <p>5. Full operational management</p>
   </div>
 
-  <div class="section">
-    <h2>Owner Responsibilities</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Minimal Involvement</h3>
-        <p>No guest communication or booking management required.</p>
-      </div>
-
-      <div class="card">
-        <h3>No Operational Duties</h3>
-        <p>No cleaning coordination, check-ins, or listing management.</p>
-      </div>
-
-      <div class="card">
-        <h3>Standard Property Ownership</h3>
-        <p>You maintain ownership while we operate under lease terms.</p>
-      </div>
-    </div>
-  </div>
-
+  <!-- CTA -->
   <div class="cta">
     <h2>Interested in Leasing Your Property?</h2>
     <p>Contact us to review your property and discuss lease terms.</p>
