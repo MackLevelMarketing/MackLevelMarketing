@@ -33,6 +33,37 @@
       overflow-x: hidden;
     }
 
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,5,5,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(214,181,109,0.2);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--champagne);
+      font-size: 16px;
+    }
+
+    .links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--ivory);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      color: var(--champagne);
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -258,6 +289,22 @@
     }
 
     @media (max-width: 800px) {
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .links a {
+        margin-left: 0;
+      }
+
       header {
         padding: 30px 6%;
       }
@@ -283,16 +330,26 @@
 
 <body>
 
+  <div class="nav">
+    <div class="logo">Mack Multi-Level Marketing LLC</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="owners.html">Property Owners</a>
+      <a href="investors.html">Cash Flow</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
   <header>
     <div class="hero">
-      <div class="eyebrow">Boutique STR Strategy · Owner Partnerships · Luxury Hospitality</div>
+      <div class="eyebrow">Boutique STR Strategy · Property Leasing · Cash Flow Opportunities</div>
       <h1>Elevating Properties Into <span>Premium Short-Term Rental</span> Opportunities.</h1>
       <p>
-        Mack Multi-Level Marketing LLC helps property owners, landlords, and investors maximize rental potential through short-term rental management, rental arbitrage partnerships, and luxury property optimization.
+        Mack Multi-Level Marketing LLC creates structured opportunities through long-term property leasing, professional short-term rental operations, and hands-off cash flow strategies.
       </p>
       <div class="buttons">
-        <a href="#contact" class="btn btn-primary">Partner With Us</a>
-        <a href="#services" class="btn btn-secondary">Explore Services</a>
+        <a href="owners.html" class="btn btn-primary">I Own a Property</a>
+        <a href="investors.html" class="btn btn-secondary">I Want Hands-Off Cash Flow</a>
       </div>
     </div>
   </header>
@@ -302,13 +359,13 @@
       <div class="section-title">
         <h2>Where property meets <span>possibility.</span></h2>
         <p>
-          We specialize in identifying rental properties with strong short-term rental potential and creating a strategy that benefits both owners and guests.
+          We specialize in identifying rental properties with strong short-term rental potential and creating structured opportunities around professional operations, long-term leasing, and cash-flow strategy.
         </p>
       </div>
 
       <div class="feature-box glass">
         <p>
-          Our approach blends hospitality, property presentation, guest experience, and income strategy. Whether through management, arbitrage, or optimization, our goal is to create a polished, professional, and profitable rental experience.
+          Our approach blends hospitality, property presentation, guest experience, and income strategy. Whether through lease-based property use or capital-to-cashflow opportunities, our goal is to create a polished, professional, and carefully managed rental experience.
         </p>
       </div>
     </div>
@@ -317,18 +374,18 @@
   <section id="services">
     <div class="section-title">
       <h2>Our <span>Services</span></h2>
-      <p>Designed for owners who want a more strategic, hands-off way to position their rental properties.</p>
+      <p>Designed for owners and capital partners who want structured, professionally managed short-term rental opportunities.</p>
     </div>
 
     <div class="grid">
       <div class="card glass">
-        <h3>STR Management</h3>
-        <p>Guest communication, booking support, turnover coordination, pricing strategy, and ongoing property care.</p>
+        <h3>Long-Term Property Leasing</h3>
+        <p>We lease qualified properties directly from owners and operate them professionally as short-term rentals.</p>
       </div>
 
       <div class="card glass">
-        <h3>Rental Arbitrage</h3>
-        <p>We lease qualified properties and operate them as short-term rentals with a professional hospitality strategy.</p>
+        <h3>STR Operations</h3>
+        <p>Guest communication, booking support, turnover coordination, cleaning, upkeep, and ongoing property care.</p>
       </div>
 
       <div class="card glass">
@@ -337,32 +394,32 @@
       </div>
 
       <div class="card glass">
-        <h3>Owner Partnerships</h3>
-        <p>Customized partnership structures built around the property, location, owner goals, and income potential.</p>
+        <h3>Credit-to-Cashflow Opportunities</h3>
+        <p>Structured, fully managed opportunities for individuals interested in hands-off cash-flow potential.</p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="section-title">
-      <h2>Why owners <span>work with us</span></h2>
-      <p>We focus on professionalism, presentation, and performance — without overpromising or cutting corners.</p>
+      <h2>Why people <span>work with us</span></h2>
+      <p>We focus on professionalism, presentation, structure, and performance — without overpromising or cutting corners.</p>
     </div>
 
     <div class="grid">
       <div class="card glass">
-        <h3>Hands-Off Support</h3>
+        <h3>Hands-Off Structure</h3>
         <p>We help reduce the day-to-day burden of managing guest-ready rental operations.</p>
       </div>
 
       <div class="card glass">
         <h3>Luxury Positioning</h3>
-        <p>We create a polished guest experience that helps the property stand out in competitive markets.</p>
+        <p>We create a polished guest experience that helps properties stand out in competitive markets.</p>
       </div>
 
       <div class="card glass">
         <h3>Strategic Income Focus</h3>
-        <p>Every property is reviewed through the lens of pricing, demand, location, and operational feasibility.</p>
+        <p>Every opportunity is reviewed through pricing, demand, location, and operational feasibility.</p>
       </div>
     </div>
   </section>
@@ -374,23 +431,23 @@
 
     <div class="timeline">
       <div class="step glass">
-        <strong>01 · Property Review</strong>
-        We evaluate the property, location, rental rules, layout, and market potential.
+        <strong>01 · Opportunity Review</strong>
+        We evaluate the property, location, rental rules, layout, market potential, and overall fit.
       </div>
 
       <div class="step glass">
         <strong>02 · Strategy Buildout</strong>
-        We create a customized short-term rental plan based on the property’s best use.
+        We create a customized short-term rental plan based on the property’s best use and agreement structure.
       </div>
 
       <div class="step glass">
         <strong>03 · Setup & Launch</strong>
-        We prepare the listing, guest flow, operations, and presentation.
+        We prepare the listing, guest flow, operations, cleaning structure, and presentation.
       </div>
 
       <div class="step glass">
         <strong>04 · Ongoing Management</strong>
-        We support the guest experience, booking flow, turnovers, and property standards.
+        We support guest experience, booking flow, turnovers, upkeep, and property standards.
       </div>
     </div>
   </section>
@@ -398,29 +455,29 @@
   <section>
     <div class="section-title">
       <h2>Current & Future <span>Listings</span></h2>
-      <p>This section can showcase your STR listings, commercial opportunities, photos, revenue examples, and portfolio highlights later.</p>
+      <p>This section can showcase STR listings, commercial opportunities, photos, revenue examples, and portfolio highlights later.</p>
     </div>
 
     <div class="portfolio glass">
       <div>
         <h3 style="color: var(--champagne); font-family: 'Playfair Display', serif;">Portfolio Coming Soon</h3>
         <p style="color: var(--muted); max-width: 520px;">
-          Featured short-term rental properties and partnership opportunities will be added here.
+          Featured short-term rental properties and cash-flow opportunities will be added here.
         </p>
       </div>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2>Let’s discuss your <span style="color: var(--champagne);">property.</span></h2>
+    <h2>Let’s discuss your <span style="color: var(--champagne);">property or opportunity.</span></h2>
     <p>
-      Interested in short-term rental management, rental arbitrage, or a partnership? Reach out to see if your property is a good fit.
+      Interested in leasing your property, exploring STR operations, or learning more about hands-off cash-flow opportunities? Reach out to see if it is a good fit.
     </p>
 
-    <a href="mailto:your@email.com" class="btn btn-primary">Email Us</a>
+    <a href="mailto:markitcustomerservice@gmail.com" class="btn btn-primary">Email Us</a>
 
     <p style="margin-top: 24px;">
-      Email: markitcustomerservice@gmail.com@.com<br>
+      Email: markitcustomerservice@gmail.com<br>
       Phone: (601) 672-3881
     </p>
   </section>
