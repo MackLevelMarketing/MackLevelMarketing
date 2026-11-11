@@ -535,6 +535,19 @@
           </div>
         </div>
 
+        <!-- ACH Deposit Details (shown when ACH selected) -->
+        <div id="ach-details" class="ach-details" style="display:none; margin-top:16px; padding:20px; background:rgba(5,5,5,0.6); border:1px solid rgba(214,181,109,0.3); border-radius:var(--radius-md);">
+          <div style="color:var(--champagne); font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">ACH Deposit Instructions</div>
+          <div style="color:var(--muted); font-size:13px; line-height:1.8; margin-bottom:16px;">
+            <strong>Mack Multi-Level Marketing LLC</strong><br>
+            Bank: Chase Bank<br>
+            Routing: <code style="font-family:var(--font-mono); color:var(--ivory); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">021000021</code><br>
+            Account: <code style="font-family:var(--font-mono); color:var(--ivory); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">9876543210</code><br>
+            Reference: <code style="font-family:var(--font-mono); color:var(--champagne); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">MACK-[TIER]-[EMAIL]</code>
+          </div>
+          <p style="color:var(--muted); font-size:11px; margin:0;">After transfer, email the receipt to <a href="mailto:markitcustomerservice@gmail.com" style="color:var(--champagne);">markitcustomerservice@gmail.com</a> with your tier and email for fulfillment.</p>
+        </div>
+
         <!-- Email Input -->
         <div style="margin:24px 0 8px; color:var(--muted); font-size:13px; letter-spacing:1px; text-transform:uppercase;">Delivery Email</div>
         <input type="email" class="email-field" id="delivery-email" placeholder="you@example.com" value="">
@@ -612,6 +625,13 @@
       document.querySelectorAll('.payment-method').forEach(m => {
         m.classList.toggle('selected', m.dataset.method === method);
       });
+      // Show ACH details when ACH is selected
+      const achDetails = document.getElementById('ach-details');
+      if (method === 'ach') {
+        achDetails.style.display = 'block';
+      } else {
+        achDetails.style.display = 'none';
+      }
     }
 
     // Update order summary
