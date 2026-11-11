@@ -523,6 +523,11 @@
             <div class="payment-method-label">Credit Card</div>
             <div class="payment-method-desc">Visa, Mastercard, Amex</div>
           </div>
+          <div class="payment-method" data-method="apple" onclick="selectPayment('apple')">
+            <div class="payment-method-icon">🍎</div>
+            <div class="payment-method-label">Apple Pay</div>
+            <div class="payment-method-desc">Secure mobile payments</div>
+          </div>
           <div class="payment-method" data-method="paypal" onclick="selectPayment('paypal')">
             <div class="payment-method-icon">🅿️</div>
             <div class="payment-method-label">PayPal</div>
@@ -540,12 +545,23 @@
           <div style="color:var(--champagne); font-size:12px; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">ACH Deposit Instructions</div>
           <div style="color:var(--muted); font-size:13px; line-height:1.8; margin-bottom:16px;">
             <strong>Mack Multi-Level Marketing LLC</strong><br>
-            Bank: Chase Bank<br>
-            Routing: <code style="font-family:var(--font-mono); color:var(--ivory); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">021000021</code><br>
-            Account: <code style="font-family:var(--font-mono); color:var(--ivory); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">9876543210</code><br>
-            Reference: <code style="font-family:var(--font-mono); color:var(--champagne); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">MACK-[TIER]-[EMAIL]</code>
+            <span style="display:block; margin-top:8px;">For deposits routing to this account, use the following details:</span>
+            <strong>Bank</strong>: Chase Bank<br>
+            <strong>Routing Number</strong>: <code style="font-family:var(--font-mono); color:var(--ivory); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">021000021</code><br>
+            <strong>Account Number</strong>: <code style="font-family:var(--font-mono); color:var(--ivory); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">9876543210</code><br>
+            <strong>Reference</strong>: <code style="font-family:var(--font-mono); color:var(--champagne); background:rgba(0,0,0,0.3); padding:2px 6px; border-radius:4px;">MACK-[TIER]-[EMAIL]</code>
           </div>
-          <p style="color:var(--muted); font-size:11px; margin:0;">After transfer, email the receipt to <a href="mailto:markitcustomerservice@gmail.com" style="color:var(--champagne);">markitcustomerservice@gmail.com</a> with your tier and email for fulfillment.</p>
+          <div style="margin-top:16px; padding:12px; background:rgba(0,0,0,0.3); border-radius:var(--radius-sm); border-left:3px solid var(--champagne);">
+            <div style="color:var(--champagne); font-size:12px; font-weight:600; margin-bottom:6px;">How Deposits Are Processed:</div>
+            <ul style="color:var(--muted); font-size:11px; line-height:1.6; margin:0; padding-left:16px;">
+              <li>ACH transfers typically arrive within 1-3 business days</li>
+              <li>Reference format ensures proper credit to your account</li>
+              <li>All deposits are logged and matched to your customer profile</li>
+              <li>You'll receive email confirmation of deposit receipt</li>
+              <li>Deliverables are processed after payment clearance</li>
+            </ul>
+          </div>
+          <p style="color:var(--muted); font-size:11px; margin:16px 0 0;">After transfer, email the receipt to <a href="mailto:markitcustomerservice@gmail.com" style="color:var(--champagne);">markitcustomerservice@gmail.com</a> with your tier and email for fulfillment.</p>
         </div>
 
         <!-- Email Input -->
@@ -558,7 +574,7 @@
           Continue to Checkout →
         </button>
         <p style="color:var(--muted);font-size:11px;text-align:center;margin:12px 0 0;">
-          30-day money-back guarantee · Lifetime access to updates
+          <strong>How deposits are processed:</strong> Card/PayPal/Apple Pay → instant digital delivery. ACH → 1-3 business days after clearance. All deposits are logged and matched to your customer profile.
         </p>
       </div>
 
@@ -627,10 +643,8 @@
       });
       // Show ACH details when ACH is selected
       const achDetails = document.getElementById('ach-details');
-      if (method === 'ach') {
-        achDetails.style.display = 'block';
-      } else {
-        achDetails.style.display = 'none';
+      if (achDetails) {
+        achDetails.style.display = (method === 'ach') ? 'block' : 'none';
       }
     }
 
@@ -680,6 +694,7 @@
       const data = tierData[selectedTier];
       const methodNames = {
         card: 'Credit Card',
+        apple: 'Apple Pay',
         paypal: 'PayPal',
         ach: 'ACH Bank Transfer'
       };
